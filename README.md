@@ -71,11 +71,11 @@ Fazendo login no MariaDB
 ```sh
 sudo mariadb -u root
 ```
-Criando um novo usuário, lembre-se de alterar **usuario** e **senha**
+Criando um novo usuário, lembre-se de editar **usuario** e **senha**
 ```sql
 CREATE USER 'usuario'@'127.0.0.1' IDENTIFIED BY 'senha';
 ```
-Liberando todas permissões para um usuário específico, lembre-se de alterar o **usuario**
+Liberando todas permissões para um usuário específico, lembre-se de editar **usuario**
 ```sql
 GRANT ALL PRIVILEGES ON *.* TO 'usuario'@'127.0.0.1' WITH GRANT OPTION;
 ```
