@@ -25,11 +25,11 @@ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/loca
 ```
 
 # Exemplo de configuração do Nginx com PHP
-Substitua MEUSITE pelo nome do seu projeto
+Substitua **MEUSITE** pelo nome do seu projeto
 ```sh
 sudo nano /etc/nginx/sites-enabled/MEUSITE.conf
 ```
-Exemplo de um arquivo de configurações, lembre-se de trocar MINHAPASTA para redirecionar para o diretório correto
+Exemplo de um arquivo de configurações, lembre-se de trocar **MINHAPASTA** para redirecionar para o diretório correto
 ```
 server {
     listen 1000;
@@ -65,4 +65,21 @@ server {
         deny all;
     }
 }
+```
+# Criando um usuário root no MariaDB
+Fazendo login no MariaDB
+```sh
+sudo mariadb -u root
+```
+Criando um novo usuário, lembre-se de alterar **usuario** e **senha**
+```sql
+CREATE USER 'usuario'@'127.0.0.1' IDENTIFIED BY 'senha';
+```
+Liberando todas permissões para um usuário específico, lembre-se de alterar o **usuario**
+```sql
+GRANT ALL PRIVILEGES ON *.* TO 'usuario'@'127.0.0.1' WITH GRANT OPTION;
+```
+Sair do console do MariaDB
+```sql
+EXIT;
 ```
