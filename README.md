@@ -46,7 +46,7 @@ server {
 
     location ~ \.php$ {
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
         fastcgi_index index.php;
         include fastcgi_params;
         fastcgi_param PHP_VALUE "upload_max_filesize = 100M \n post_max_size=100M";
@@ -72,11 +72,11 @@ sudo mariadb -u root
 ```
 Criando um novo usuário, lembre-se de editar **usuario** e **senha**
 ```sql
-CREATE USER 'usuario'@'127.0.0.1' IDENTIFIED BY 'senha';
+CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'senha';
 ```
 Liberando todas permissões para um usuário específico, lembre-se de editar **usuario**
 ```sql
-GRANT ALL PRIVILEGES ON *.* TO 'usuario'@'127.0.0.1' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'usuario'@'localhost' WITH GRANT OPTION;
 ```
 Sair do console do MariaDB
 ```sql
