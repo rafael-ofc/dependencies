@@ -53,15 +53,14 @@ server {
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         fastcgi_param HTTP_PROXY "";
         fastcgi_intercept_errors off;
-        fastcgi_buffer_size 128k;
-        fastcgi_buffers 4 256k;
+        fastcgi_buffer_size 16k;
+        fastcgi_buffers 4 16k;
         fastcgi_connect_timeout 300;
         fastcgi_send_timeout 300;
         fastcgi_read_timeout 300;
-        fastcgi_buffering off;
     }
 
-    location ~ /\.env {
+    location ~ /\.ht {
         deny all;
     }
 }
