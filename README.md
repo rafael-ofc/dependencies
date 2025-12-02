@@ -17,7 +17,7 @@ sudo apt update
 ```
 Instalar dependências
 ```sh
-sudo apt -y install php8.3 php8.3-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,zip,intl} mariadb-server nginx tar unzip
+sudo apt -y install php8.3 php8.3-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,zip,intl} mariadb-server nginx tar unzip redis-server
 ```
 Instalando o Composer
 ```sh
